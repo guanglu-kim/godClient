@@ -19,8 +19,7 @@ export default function BottomNav() {
 
 function RouteButton({ img, imgOn, route, title }) {
     const location = useLocation();
-    console.log(location)
-    return <div className='flex flex-col justify-center' onClick={()=>history.push(route)}>
+    return <div className='flex flex-col justify-center items-center' onClick={()=>history.push(route)}>
         {location.pathname === route ?
             <img src={imgOn} className="w-6 h-6" /> :
             <img src={img} className="w-6 h-6" />

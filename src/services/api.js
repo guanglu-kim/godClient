@@ -119,4 +119,39 @@ export default {
             params: payload?.params,
         });
     },
+    getSettingCateSuit: (payload) => {
+        return request(base + `setting/cate/suit`, {
+            method: `get`,
+            data: payload?.data,
+            params: payload?.params,
+        });
+    },
+    getSettingCateShare: (payload) => {
+        return request(base + `setting/cate/share`, {
+            method: `get`,
+            data: payload?.data,
+            params: payload?.params,
+        });
+    },
+    getSettingCateNotice: (payload) => {
+        return request(base + `setting/cate/notice`, {
+            method: `get`,
+            data: payload?.data,
+            params: payload?.params,
+        });
+    },
+    postOrderById: (payload) => {
+        return request(base + `order/${payload.id}`, {
+            method: `post`,
+            data: payload?.data,
+            params: payload?.params,
+        });
+    },
+    postKey: (payload) => {
+        return request(base + `key/${payload.pre}`, {
+            method: `post`,
+            data: payload?.data,
+            params: payload?.params,
+        });
+    },
 }
