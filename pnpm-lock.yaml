@@ -11,6 +11,7 @@ specifiers:
   antd: ^4.20.7
   eslint: ^8.21.0
   lint-staged: ^13.0.3
+  moment: ^2.29.4
   prettier: ^2.7.1
   prettier-plugin-organize-imports: ^2
   prettier-plugin-packagejson: ^2
@@ -24,6 +25,7 @@ dependencies:
   '@umijs/max': 4.0.9_4kelmht5p6seurkgrs525r3njq
   ahooks: 3.7.0
   antd: 4.22.2
+  moment: 2.29.4
 
 devDependencies:
   '@types/react': 18.0.15

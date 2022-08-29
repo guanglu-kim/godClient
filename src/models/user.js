@@ -1,7 +1,5 @@
 // 全局共享数据示例
-import { DEFAULT_NAME } from '@/constants';
 import { useCallback, useEffect, useState } from 'react';
-import api from '../services/api'
 import coreUser from '../core/user'
 
 export default () => {

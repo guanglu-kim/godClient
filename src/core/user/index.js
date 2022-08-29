@@ -2,6 +2,7 @@ import api from './api';
 import { history } from 'umi'
 import { request } from 'umi';
 import { message } from 'antd';
+import moment from 'moment'
 
 function saveToken(token, refreshToken) {
     localStorage.setItem(`token`, token);
@@ -37,7 +38,11 @@ function saveUser(user) {
 }
 
 function getUser() {
-    return JSON.parse(localStorage.getItem(`user`))
+    const obj = JSON.parse(localStorage.getItem(`user`))
+    let diff = moment(obj.vip).diff(moment(), `day`);
+    if (diff < 0) diff = 0;
+    obj.vip = diff;
+    return obj;
 }
 
 async function login(phone, dp, u) {
@@ -53,7 +58,7 @@ async function login(phone, dp, u) {
 
 const responseInterceptors = [res => res, async (error) => {
     if (error.response && error.response.status === 401) {
-        if (!refreshToken()) {
+        if (!await refreshToken()) {
             history.push(`./login`);
             return;
         }
